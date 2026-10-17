@@ -3,7 +3,7 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
-const builtAssets = path.join(root, "client", "dist", "assets");
+const builtAssets = path.join(root, "frontend", "dist", "assets");
 const publicAssets = path.join(root, "public", "assets");
 const files = await readdir(builtAssets);
 

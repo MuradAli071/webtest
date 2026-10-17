@@ -20,7 +20,7 @@ const app = express();
 if (process.env.VERCEL) {
   app.use(async (_request, _response, next) => {
     try {
-      await initializeServer();
+      await initializeServer(app);
       next();
     } catch (error) {
       next(error);

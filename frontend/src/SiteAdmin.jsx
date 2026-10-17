@@ -119,7 +119,7 @@ function SiteImageControl({ label, url, alt, onAltChange, onUpload, onRemove, up
           <button className="admin-cancel-button" onClick={onRemove} type="button">Remove image</button>
         </>
       )}
-      <p className="upload-help">JPEG, PNG, WebP, AVIF or GIF, up to 10 MB. Uploads require Cloudinary configured in server/.env.</p>
+      <p className="upload-help">JPEG, PNG, WebP, AVIF or GIF, up to 10 MB. Uploads require Cloudinary configured in backend/.env.</p>
     </div>
   );
 }
@@ -231,7 +231,7 @@ export function SiteContentAdmin() {
       }
     } catch (requestError) {
       setError(requestError.message.includes("Cloudinary image storage is not configured")
-        ? "Image uploads need Cloudinary. Add CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, and CLOUDINARY_API_SECRET to server/.env, then restart the backend."
+        ? "Image uploads need Cloudinary. Add CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, and CLOUDINARY_API_SECRET to backend/.env, then restart the backend."
         : requestError.message);
     } finally {
       setUploadingAsset("");

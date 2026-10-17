@@ -16,7 +16,7 @@ an Express/Mongoose API, and a protected content-management panel.
    npm install
    ```
 
-2. Copy `server/.env.example` to `server/.env` and configure:
+2. Copy `backend/.env.example` to `backend/.env` and configure:
    - `MONGODB_URI` for the MongoDB database.
    - `ADMIN_EMAIL` and a unique `ADMIN_PASSWORD` for the single administrator.
    - `JWT_SECRET` as a random secret of at least 32 characters.
@@ -24,7 +24,7 @@ an Express/Mongoose API, and a protected content-management panel.
    - `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, and `CLOUDINARY_API_SECRET`
      for logo, favicon, homepage, service, portfolio, and About page image uploads.
      These are intentionally blank in the example file: obtain them from your
-     Cloudinary account dashboard, add them only to `server/.env`, and restart
+     Cloudinary account dashboard, add them only to `backend/.env`, and restart
      the backend. Image upload controls explain this setup when storage is not configured.
 
    Generate a suitable JWT secret with:
@@ -86,7 +86,7 @@ The public project-enquiry page is `/contact`; it reads email, phone, WhatsApp,
 social links and address from the settings managed at `/admin/content`. Enquiries
 are saved to MongoDB whether or not email notifications are configured. To
 enable optional SMTP notifications, set `SMTP_HOST`, `SMTP_PORT`,
-`SMTP_FROM_EMAIL`, and `ENQUIRY_NOTIFICATION_EMAIL` in `server/.env`. For
+`SMTP_FROM_EMAIL`, and `ENQUIRY_NOTIFICATION_EMAIL` in `backend/.env`. For
 authenticated SMTP providers, also set both `SMTP_USER` and `SMTP_PASSWORD`;
 `SMTP_SECURE=true` enables TLS (port 465 is treated as secure automatically).
 Leave all SMTP fields blank to keep the enquiry form working without email
@@ -107,8 +107,8 @@ project, and About administration is available under `/api/admin/services`,
 session-signing key remain environment configuration and are never returned by
 the content APIs.
 
-For production, run `npm run build` and deploy `client/dist` alongside the
-server workspace. Express serves the built assets with long-lived immutable
+For production, run `npm run build` and deploy `frontend/dist` alongside the
+backend workspace. Express serves the built assets with long-lived immutable
 caching and injects editable page-specific SEO and Open Graph metadata into the
 HTML response, including detail-page metadata and proper HTTP 404 responses.
 Point the public website origin and its routes to the Express server, and set
@@ -142,5 +142,5 @@ npm run build
 
 ## Structure
 
-- `client/` — Vite, React Router, Tailwind CSS, public content pages, and `/admin`
-- `server/` — Express API, Mongoose content models, Cloudinary image storage, and protected admin routes
+- `frontend/` — Vite, React Router, Tailwind CSS, public content pages, and `/admin`
+- `backend/` — Express API, Mongoose content models, Cloudinary image storage, and protected admin routes

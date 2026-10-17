@@ -17,7 +17,7 @@ export async function apiRequest(path, options = {}) {
   const payload = await response.json().catch(() => null);
   if (!response.ok) {
     const message = payload?.error === "Cloudinary image storage is not configured."
-      ? "Image uploads need Cloudinary. Add CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, and CLOUDINARY_API_SECRET to server/.env, then restart the backend."
+      ? "Image uploads need Cloudinary. Add CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, and CLOUDINARY_API_SECRET to backend/.env, then restart the backend."
       : payload?.error || `Request failed (${response.status}).`;
     throw new Error(message);
   }

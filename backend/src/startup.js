@@ -28,7 +28,7 @@ function validateEnvironment() {
   return { MONGODB_URI, ADMIN_PASSWORD };
 }
 
-async function initialize() {
+async function initialize(app) {
   const { MONGODB_URI, ADMIN_PASSWORD } = validateEnvironment();
 
   if (mongoose.connection.readyState !== 1) {
@@ -40,8 +40,8 @@ async function initialize() {
   app.locals.adminPasswordHash = await bcrypt.hash(ADMIN_PASSWORD, 12);
 }
 
-export function initializeServer() {
-  if (!initialization) initialization = initialize();
+export function initializeServer(app) {
+  if (!initialization) initialization = initialize(app);
 
   const currentInitialization = initialization;
   return currentInitialization.catch((error) => {

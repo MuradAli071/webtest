@@ -6,8 +6,8 @@ import Project from "./models/Project.js";
 import Service from "./models/Service.js";
 import SiteContent from "./models/SiteContent.js";
 
-const buildDirectory = fileURLToPath(new URL("../../client/dist/", import.meta.url));
-const indexFile = fileURLToPath(new URL("../../client/dist/index.html", import.meta.url));
+const buildDirectory = fileURLToPath(new URL("../../frontend/dist/", import.meta.url));
+const indexFile = fileURLToPath(new URL("../../frontend/dist/index.html", import.meta.url));
 const defaultMetadata = {
   home: {
     title: "Digital solutions for ambitious ideas",

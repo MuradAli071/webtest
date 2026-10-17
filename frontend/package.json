@@ -1,5 +1,5 @@
 {
-  "name": "@superx/client",
+  "name": "@superx/frontend",
   "private": true,
   "version": "1.0.0",
   "type": "module",

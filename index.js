@@ -1,5 +1,5 @@
 import express from "express";
-import app from "./server/src/app.js";
+import app from "./backend/src/app.js";
 
 const vercelApp = express();
 vercelApp.use(app);
