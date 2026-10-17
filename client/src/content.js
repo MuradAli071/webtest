@@ -1,0 +1,88 @@
+export const defaultNavigation = [
+  { label: "Services", href: "/services", visible: true },
+  { label: "Work", href: "/work", visible: true },
+  { label: "About", href: "/about", visible: true },
+  { label: "FAQs", href: "/#faq", visible: true },
+];
+
+export const emptySiteContent = {
+  brand: {
+    name: "SUPERX",
+    tagline: "Digital solutions for ambitious ideas.",
+    logoUrl: "",
+    faviconUrl: "",
+  },
+  navigation: defaultNavigation,
+  homepage: {
+    hero: {
+      visible: true,
+      eyebrow: "SUPERX TECHNOLOGY",
+      title: "Digital experiences",
+      titleAccent: "built for what's next.",
+      description: "We design and build thoughtful websites, software, and digital solutions around your goals.",
+      primaryAction: "Discuss your project",
+      primaryHref: "/contact",
+      secondaryAction: "Explore services",
+      secondaryHref: "/services",
+    },
+    services: {
+      visible: true,
+      eyebrow: "SERVICES",
+      title: "Technology for",
+      titleAccent: "your next move.",
+      description: "Explore our service areas and find a starting point for your goals.",
+      viewAllLabel: "All services",
+    },
+    work: {
+      visible: true,
+      eyebrow: "PORTFOLIO",
+      title: "Selected",
+      titleAccent: "work.",
+      description: "Project stories will appear here when they are ready and approved for publication.",
+      viewAllLabel: "View all work",
+    },
+    about: { visible: true },
+    testimonials: {
+      visible: true,
+      eyebrow: "TESTIMONIALS",
+      title: "What our clients",
+      titleAccent: "say.",
+    },
+    faqs: {
+      visible: true,
+      eyebrow: "FAQ",
+      title: "Frequently asked",
+      titleAccent: "questions.",
+      description: "Answers to common questions will appear here when they are configured.",
+    },
+    contact: {
+      visible: true,
+      eyebrow: "CONTACT",
+      title: "Let's talk about",
+      titleAccent: "your next project.",
+      description: "Tell us what you are looking to build, and our team can discuss the next steps with you.",
+      buttonLabel: "Send enquiry",
+    },
+  },
+  testimonials: [],
+  faqs: [],
+  contact: { email: "", phone: "", whatsapp: "", address: "", socialLinks: [] },
+  seo: {
+    title: "Digital solutions for ambitious ideas",
+    description: "Explore SUPERX Technology's services and get in touch about your project.",
+    imageUrl: "",
+    pages: {
+      home: {
+        title: "Digital solutions for ambitious ideas",
+        description: "Explore SUPERX Technology's services and get in touch about your project.",
+      },
+      about: { title: "About SUPERX Technology", description: "Learn about SUPERX Technology and our approach to digital work." },
+      contact: { title: "Contact SUPERX Technology", description: "Get in touch with SUPERX Technology about your project." },
+      services: { title: "Services | SUPERX Technology", description: "Explore digital services from SUPERX Technology." },
+      work: { title: "Selected work | SUPERX Technology", description: "Explore project stories published by SUPERX Technology." },
+      privacy: { title: "Privacy policy | SUPERX Technology", description: "Read the SUPERX Technology privacy policy." },
+      terms: { title: "Terms | SUPERX Technology", description: "Read the SUPERX Technology terms and conditions." },
+    },
+  },
+  legalAvailable: { privacyPolicy: false, terms: false },
+};
