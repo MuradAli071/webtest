@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import { registerFrontend } from "./frontend.js";
+import { initializeServer } from "./startup.js";
 import discoveryRouter from "./routes/discovery.js";
 import adminRouter from "./routes/admin.js";
 import adminAboutRouter from "./routes/adminAbout.js";
@@ -15,6 +16,17 @@ import servicesRouter from "./routes/services.js";
 import siteRouter from "./routes/site.js";
 
 const app = express();
+
+if (process.env.VERCEL) {
+  app.use(async (_request, _response, next) => {
+    try {
+      await initializeServer();
+      next();
+    } catch (error) {
+      next(error);
+    }
+  });
+}
 
 app.use(express.json({ limit: "1mb" }));
 app.use(cookieParser());

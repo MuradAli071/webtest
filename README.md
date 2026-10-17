@@ -115,6 +115,25 @@ Point the public website origin and its routes to the Express server, and set
 `SITE_URL` to that public origin. This also serves `/robots.txt` and the
 published-content `/sitemap.xml` from the same host.
 
+## Deploying to Vercel
+
+The repository root is configured as an Express deployment. In Vercel, set the
+project Root Directory to the repository root and add these Production
+Environment Variables under Project Settings:
+
+- `MONGODB_URI`
+- `ADMIN_EMAIL`
+- `ADMIN_PASSWORD` (at least 12 characters)
+- `JWT_SECRET` (at least 32 random characters)
+- `SITE_URL` (the exact public HTTPS origin, without a path)
+
+Set Cloudinary and SMTP variables only if those optional features are needed.
+The `vercel-build` script builds the frontend and copies its hashed assets into
+Vercel's static `public/assets` directory; the Express function serves the
+frontend routes, API, sitemap, and robots file. MongoDB must accept connections
+from the deployed function. Never commit `.env` files or put secrets in
+frontend build variables.
+
 ## Validation
 
 ```sh
